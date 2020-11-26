@@ -1,8 +1,7 @@
 
 import React, { Component } from 'react';
 import MemberRESTService from '../RESTService/MemberRESTService';
-import { withRouter } from 'react-router-dom';
-
+import { withRouter, Link } from 'react-router-dom';
 
 class UserList extends Component {
     state = {
@@ -39,6 +38,7 @@ class UserList extends Component {
                 <td>{item.First}</td>
                 <td>{item.Last}</td>
                 <td>{item.Handle}</td>
+                <td><Link class="badge badge-secondary" to={`/person/${item.id}`}>View</Link></td>
             </tr>
         )
     }
@@ -53,6 +53,7 @@ class UserList extends Component {
                             <th scope="col">First</th>
                             <th scope="col">Last</th>
                             <th scope="col">Handle</th>
+                            <th scope="col">Detail</th>
                         </tr>
                     </thead>
                     <tbody>

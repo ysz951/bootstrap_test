@@ -3,6 +3,8 @@ import React, { Component } from 'react';
 import { withRouter, Switch, Route, Link, NavLink } from 'react-router-dom';
 import UserList from './UserList/UserList';
 import RegisterUser from './RegisterUser/RegisterUser';
+import UserPage from './UserPage/UserPage';
+
 class App extends Component {
 
   render() {
@@ -37,7 +39,8 @@ class App extends Component {
         </nav> */}
         <Switch>
           <Route exact path="/" component={test} />
-          <Route path="/person" component={UserList} />
+          <Route exact path="/person" component={UserList} />
+          <Route path="/person/:id" component={UserPage}/>
           <Route path="/register_user" component={RegisterUser} />
         </Switch>
       </>
