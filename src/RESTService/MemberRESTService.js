@@ -21,9 +21,30 @@ class MemberRESTService {
     }
 
     createMember(member) {
-        return axios.post(LUMS_API_URL + '/members', member)
+        return axios.post(LUMS_API_URL + '/members', member);
     }
-    
+
+    changePassword(id, oldPassword, newPassword) {
+        return axios.post(LUMS_API_URL + `/members/password/${id}/${oldPassword}/${newPassword}`);
+    }
+
+    block(id, adminId) {
+        const params = new URLSearchParams({
+            adminId: adminId
+        });
+        return axios.post(LUMS_API_URL + `/members/block/${id}` + '?' + params);
+    }
+
+    unblock(id, adminId) {
+        const params = new URLSearchParams({
+            adminId: adminId
+        });
+        return axios.post(LUMS_API_URL + `/members/unblock/${id}` + '?' + params);
+    }
+
+    updateMemberEmail(id, newEmail) {
+        return axios.put(LUMS_API_URL + `/members/email/${id}/${newEmail}`);
+    }
 }
 
 

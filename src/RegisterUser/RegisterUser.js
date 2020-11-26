@@ -14,10 +14,23 @@ class RegisterUser extends Component {
 
     register = (e) => {
         e.preventDefault();
+        const member = {
+            name: userName,
+            email: userEmail,
+            password: userPassword,
+            role: userRole
+        }
+        MemberRESTService.createMember(member)
+            .then(res => {
+
+            })
+            .catch(err => {
+                
+            })
     }
 
     click = (e) => {
-
+        
     }
 
     handleChange = (e) => {
