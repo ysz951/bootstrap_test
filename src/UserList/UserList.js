@@ -38,7 +38,7 @@ class UserList extends Component {
                 <td>{item.First}</td>
                 <td>{item.Last}</td>
                 <td>{item.Handle}</td>
-                <td><Link class="badge badge-secondary" to={`/person/${item.id}`}>View</Link></td>
+                <td><Link className="badge badge-secondary" to={`/person/${item.id}`}>View</Link></td>
             </tr>
         )
     }
@@ -46,7 +46,7 @@ class UserList extends Component {
     render() {
         return (
             <>
-                <table class="table table-dark">
+                <table className="table table-dark">
                     <thead>
                         <tr>
                             <th scope="col">#</th>
@@ -58,24 +58,6 @@ class UserList extends Component {
                     </thead>
                     <tbody>
                         {this.renderUsers()}
-                        {/* <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <td>Larry</td>
-                            <td>the Bird</td>
-                            <td>@twitter</td>
-                        </tr> */}
                     </tbody>
                 </table>
             </>

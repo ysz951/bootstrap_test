@@ -24,23 +24,24 @@ class RegisterUser extends Component {
         this.setState({
             [e.target.name]: e.target.value
         })
+        // console.log(e.target.value);
     }
 
     render() {
         return (
             <>
-                <form onSubmit={this.register} class="container">
-                    <div class="form-col align-items-center justify-content-center">
+                <form onSubmit={this.register} className="container">
+                    <div className="form-col align-items-center justify-content-center">
                         <div className="form-group">
                             <label> Name: </label>
                             <input placeholder="Name" type="text" name="userName" className="form-control"
-                                onKeyUp={this.handleChange} required/>
+                                onChange={this.handleChange} required/>
                         </div>
-                        <div class="form-group">
-                            <label class="mr-sm-2" for="inlineFormCustomSelect">Role</label>
-                            <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="userRole" 
-                                onChange={this.handleChange} required>
-                                <option selected value="">Choose...</option>
+                        <div className="form-group">
+                            <label className="mr-sm-2" htmlFor="inlineFormCustomSelect">Role</label>
+                            <select className="custom-select mr-sm-2" id="inlineFormCustomSelect" name="userRole" 
+                                value={this.state.userRole} onChange={this.handleChange} required>
+                                <option value="">Choose...</option>
                                 <option value="CUSTOMER">Customer</option>
                                 <option value="ADMIN">Admin</option>
                                 <option value="SUPERUSER">Superuser</option>
@@ -50,15 +51,15 @@ class RegisterUser extends Component {
                         <div className="form-group">
                             <label> Email: </label>
                             <input placeholder="Email" type="email" name="userEmail" className="form-control"
-                                onKeyUp={this.handleChange} required/>
+                                onChange={this.handleChange} required/>
                         </div>
                         <div className="form-group">
                             <label> Password: </label>
                             <input placeholder="Password" type="password" name="userPassword" className="form-control"
-                                onKeyUp={this.handleChange} required/>
+                                onChange={this.handleChange} required/>
                         </div>
-                        <div class="form-group">
-                            <button type="submit" class="btn btn-primary">Submit</button>
+                        <div className="form-group">
+                            <button type="submit" className="btn btn-primary">Submit</button>
                         </div>
                     </div>
                 </form>

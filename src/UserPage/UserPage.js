@@ -54,7 +54,7 @@ class UserPage extends Component {
             <>
                 <button onClick={this.goBack} className="btn btn-outline-info btn-sm">Back </button>
                 <h1>User Id: {id}</h1>
-                <table class="table table-dark">
+                <table className="table table-dark">
                     <thead>
                         <tr>
                             <th scope="col">#</th>
@@ -68,17 +68,17 @@ class UserPage extends Component {
                             <th scope="row">1</th>
                             <td>
                                 <input placeholder="Name" type="text" name="userName" className="form-control"
-                                    value={this.state.userName} onKeyUp={this.handleChange} required/>
+                                    value={this.state.userName} onChange={this.handleChange} required/>
                             </td>
                             <td>
-                                <select class="custom-select mr-1" id="activateSelect" name="activate" value={this.state.activate}
+                                <select className="custom-select mr-1" id="activateSelect" name="activate" value={this.state.activate}
                                     onChange={this.handleChange} required>
                                     <option value={false}>False</option>
                                     <option value={true}>True</option>
                                 </select>
                             </td>
                             <td>
-                                <select class="custom-select mr-1" id="roleSelect" name="role" value={this.state.role}
+                                <select className="custom-select mr-1" id="roleSelect" name="role" value={this.state.role}
                                     onChange={this.handleChange} required>
                                     <option value="CUSTOMER">Customer</option>
                                     <option value="ADMIN">Admin</option>
