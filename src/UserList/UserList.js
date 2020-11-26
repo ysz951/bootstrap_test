@@ -1,6 +1,5 @@
 
 import React, { Component } from 'react';
-import axios from 'axios';
 import MemberRESTService from '../RESTService/MemberRESTService';
 import { withRouter } from 'react-router-dom';
 
