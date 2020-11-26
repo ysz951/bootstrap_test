@@ -8,7 +8,8 @@ class RegisterUser extends Component {
     state = {
         userRole: "",
         userEmail:"",
-        userPassword:""
+        userPassword:"",
+        userName:""
     }
 
     register = (e) => {
@@ -30,6 +31,11 @@ class RegisterUser extends Component {
             <>
                 <form onSubmit={this.register} class="container">
                     <div class="form-col align-items-center justify-content-center">
+                        <div className="form-group">
+                            <label> Name: </label>
+                            <input placeholder="Name" type="text" name="userName" className="form-control"
+                                onKeyUp={this.handleChange} required/>
+                        </div>
                         <div class="form-group">
                             <label class="mr-sm-2" for="inlineFormCustomSelect">Role</label>
                             <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="userRole" 
