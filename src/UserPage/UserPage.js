@@ -7,7 +7,15 @@ class UserPage extends Component {
     state = {
         role: "",
         activate: false,
-        userName: ""
+        userName: "",
+        sales: [
+            {
+                id: 1,
+                purchasedDate: "2020/10/01",
+                expireDate: "2020/11/11",
+                active: true
+            }
+        ]
     }
     componentDidMount() {
         const { id } = this.props.match.params;
@@ -47,6 +55,18 @@ class UserPage extends Component {
         })
     }
 
+    renderSales() {
+        return this.state.sales.map((item, i) =>
+            <tr key={i}>
+                <th scope="row">{item.id}</th>
+                <td>{item.purchasedDate}</td>
+                <td>{item.expireDate}</td>
+                <td>{item.active.toString()}</td>
+                <td>View</td>
+            </tr>
+        )
+    }
+
     render() {
         const { id } = this.props.match.params;
 
@@ -68,7 +88,7 @@ class UserPage extends Component {
                             <th scope="row">1</th>
                             <td>
                                 <input placeholder="Name" type="text" name="userName" className="form-control"
-                                    value={this.state.userName} onChange={this.handleChange} required/>
+                                    value={this.state.userName} onChange={this.handleChange} required />
                             </td>
                             <td>
                                 <select className="custom-select mr-1" id="activateSelect" name="activate" value={this.state.activate}
@@ -89,6 +109,22 @@ class UserPage extends Component {
                         </tr>
                     </tbody>
                 </table>
+                <h2>Sale</h2>
+                <table className="table table-dark">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Purchased Date</th>
+                            <th scope="col">Expire Date</th>
+                            <th scope="col">Active</th>
+                            <th scope="col">Detail</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {this.renderSales()}
+                    </tbody>
+                </table>
+                
             </>
         )
     }

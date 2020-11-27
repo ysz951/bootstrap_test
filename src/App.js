@@ -4,6 +4,7 @@ import { withRouter, Switch, Route, Link, NavLink } from 'react-router-dom';
 import UserList from './UserList/UserList';
 import RegisterUser from './RegisterUser/RegisterUser';
 import UserPage from './UserPage/UserPage';
+import LicensePage from './LicensePage/LicensePage';
 
 class App extends Component {
 
@@ -25,7 +26,9 @@ class App extends Component {
               <li className="nav-item">
                 <NavLink to="/register_user" className="nav-link" activeClassName="active"> Register User </NavLink >
               </li>
-
+              <li className="nav-item">
+                <NavLink to="/license" className="nav-link" activeClassName="active"> License </NavLink >
+              </li>
             </ul>
           </div>
         </nav>
@@ -34,6 +37,8 @@ class App extends Component {
           <Route exact path="/person" component={UserList} />
           <Route path="/person/:id" component={UserPage}/>
           <Route path="/register_user" component={RegisterUser} />
+          <Route exact path="/license" component={LicensePage} />
+          <Route component={NotFoundPage} />  
         </Switch>
       </>
     )
@@ -43,6 +48,12 @@ class App extends Component {
 function test() {
   return (
     <h1>Hello</h1>
+  )
+}
+
+function NotFoundPage() {
+  return (
+    <h1>Not Found</h1>
   )
 }
 
