@@ -5,6 +5,7 @@ import { withRouter, Link } from 'react-router-dom';
 
 class UserList extends Component {
     state = {
+        searchName: "",
         users: [],
         testUers: [
             {
@@ -43,9 +44,29 @@ class UserList extends Component {
         )
     }
 
+    searchUser = (e) => {
+        e.preventDefault();
+        console.log(this.state.searchName);
+    }
+
+    handleChange = (e) => {
+        this.setState({
+            [e.target.name]: e.target.value
+        })
+    }
+
     render() {
         return (
             <>
+                <form onSubmit={this.searchUser}>
+                    <div class="form-group">
+                    <input type="text" placeholder="Recipient's username" onChange={this.handleChange}
+                        aria-label="Recipient's username" name="searchName" aria-describedby="basic-addon2" />
+                    {' '}
+                    <button>Search</button>
+                    </div>
+                    
+                </form>
                 <table className="table table-dark">
                     <thead>
                         <tr>
