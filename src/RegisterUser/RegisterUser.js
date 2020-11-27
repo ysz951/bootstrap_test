@@ -15,10 +15,10 @@ class RegisterUser extends Component {
     register = (e) => {
         e.preventDefault();
         const member = {
-            name: userName,
-            email: userEmail,
-            password: userPassword,
-            role: userRole
+            name: this.state.userName,
+            email: this.state.userEmail,
+            password: this.state.userPassword,
+            role: this.state.userRole
         }
         MemberRESTService.createMember(member)
             .then(res => {
