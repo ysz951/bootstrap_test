@@ -9,7 +9,7 @@ class LicenseList extends Component {
         licenses: [
             {
                 id: 1,
-                year: 2013,
+                year: "2013",
                 price: 3.13
             }
         ],
